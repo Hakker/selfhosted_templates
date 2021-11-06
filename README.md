@@ -64,6 +64,7 @@ All templates are already configured to bind mount to various places on your dri
 - CouchPotato
 - Daapd
 - DashMachine
+- Dashy
 - Davos
 - DeeMix
 - Deluge
@@ -88,6 +89,7 @@ All templates are already configured to bind mount to various places on your dri
 - Jackett
 - Jellyfin
 - Kodi Headless
+- Lanraragi
 - LazyLibrarian
 - Let's Encrypt
 - LibreSpeed
