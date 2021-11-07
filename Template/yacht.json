@@ -4285,7 +4285,7 @@
 		{
 		  "container": "/home/koyomi/lanraragi/content",
 		  "bind": "!data/lanraragi"
-		
+		}
       ],
       "env": [
         {
