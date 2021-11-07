@@ -13,7 +13,7 @@ The following table shows the corresponding url to use for the application you'r
 
 | Application  | URL |
 | ------------- | ------------- |
-| Yacht | https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Template/yacht.json |
+| Yacht | https://raw.githubusercontent.com/Hakker/selfhosted_templates/master/Template/yacht.json |
 The others aren't maintained
 
 
