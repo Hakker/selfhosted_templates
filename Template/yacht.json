@@ -4241,7 +4241,7 @@
         {
           "container": "/app/public",
           "bind": "!config/dashy"
-        }
+        },
 		{ 
 		  "container": "/app/public/item-icons",
 		  "bind": "!data/dashy"
