@@ -4245,7 +4245,7 @@
 		{ 
 		  "container": "/app/public/item-icons",
 		  "bind": "!data/dashy"
-		
+		}
       ],
       "env": [
         {
