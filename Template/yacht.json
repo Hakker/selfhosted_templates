@@ -4369,7 +4369,7 @@
         },
         {
           "name": "Timezone",
-          "default": "",
+          "default": "Europe/amsterdam",
           "label": "TZ"
         }
       ]
@@ -4533,6 +4533,11 @@
           "name": "PGID",
           "label": "PGID",
           "default": "!PGID"
+        },
+        {
+          "name": "Timezone",
+          "default": "Europe/amsterdam",
+          "label": "TZ"
         }
       ]
     },
@@ -4569,6 +4574,52 @@
           "name": "PGID",
           "label": "PGID",
           "default": "!PGID"
+        },
+        {
+          "name": "Timezone",
+          "default": "Europe/amsterdam",
+          "label": "TZ"
+        }
+      ]
+    },
+	{
+      "type": 1,
+      "title": "Prowlarr",
+      "name": "prowlarr",
+      "description": "RProwlarr is an indexer manager/proxy built on the popular arr .net/reactjs base stack to integrate with your various PVR apps.",
+      "logo": "https://raw.githubusercontent.com/Hakker/selfhosted_templates/master/Images/prowlarr.png",
+      "image": "ghcr.io/linuxserver/prowlarr:develop",
+      "categories": [
+        "other"
+      ],
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        {
+          "WebUI": "9696:9696/tcp"
+        }
+      ],
+      "volumes": [
+		{
+		  "container": "/config",
+		  "bind": "!config/prowlarr"
+		}
+      ],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "!PUID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "!PGID"
+        },
+        {
+          "name": "Timezone",
+          "default": "Europe/amsterdam",
+          "label": "TZ"
         }
       ]
     }

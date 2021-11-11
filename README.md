@@ -128,6 +128,7 @@ All templates are already configured to bind mount to various places on your dri
 - ProjectSend
 - Prometheus
 - ProtonMail Bridge
+- Prowlarr
 - Pydio
 - qBittorrent
 - Quassel IRC
