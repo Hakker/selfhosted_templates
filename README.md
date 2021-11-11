@@ -48,6 +48,7 @@ All templates are already configured to bind mount to various places on your dri
 - example on Ubuntu it's /yacht/AppData/Config/[container] and /yacht/AppData/Data/[container]
 ## App List
 
+- Adguard Home
 - Airsonic
 - Authelia
 - Bazarr
@@ -74,6 +75,7 @@ All templates are already configured to bind mount to various places on your dri
 - Emby
 - EmbyStat
 - FileBrowser
+- Filestash
 - Flame
 - FreshRSS
 - Gazee

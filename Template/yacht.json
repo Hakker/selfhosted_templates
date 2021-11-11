@@ -4409,5 +4409,95 @@
           "default": "!PGID"
         }
       ]
+    },
+	{
+      "type": 1,
+      "title": "Filestash",
+      "name": "filestash",
+      "description": "Filestash is web application that's used as a file manager to manage your data",
+      "logo": "https://raw.githubusercontent.com/Hakker/selfhosted_templates/master/Images/filestash.png",
+      "image": "machines/filestash:latest",
+      "categories": [
+        "Data Manager"
+      ],
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        {
+          "WebUI": "8334:8334/tcp"
+        }
+      ],
+      "volumes": [
+		{
+		  "container": "/app/data/state",
+		  "bind": "!config/filestash"
+		}
+      ],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "!PUID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "!PGID"
+        }
+      ]
+    },
+	{
+      "type": 1,
+      "title": "Adguard Home",
+      "name": "adguardhome",
+      "description": "Free and open source, powerful network-wide ads & trackers blocking DNS server.",
+      "logo": "https://raw.githubusercontent.com/Hakker/selfhosted_templates/master/Images/adguard.png",
+      "image": "adguard/adguardhome:latest",
+      "categories": [
+        "adblocker"
+      ],
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        {
+          "DNS TCP": "53:53/tcp",
+		  "DNS UDP": "53:53/udp",
+		  "DHCP UDP": "67:67/udp",
+		  "DHCP TCP": "68:68/tcp",
+		  "DHCP UDP": "68:68/udp",
+		  "WebUI 80": "80:80/tcp",
+		  "WebUI 443": "443:443/tcp",
+		  "WebUI 443": "443:443/udp",
+		  "WebUI 3000": "3000:3000/tcp",
+		  "DNS over TLS": "853:853/tcp",
+		  "DNS over QUIC": "784:784/udp",
+		  "DNS over QUIC": "853:853/udp",
+		  "DNS over QUIC": "8853:8853/udp",
+		  "DNSCrypt TCP": "5443:5443/tcp",
+		  "DNSCrypt UDP": "5443:5443/udp",
+        }
+      ],
+      "volumes": [
+		{
+		  "container": "/opt/adguardhome/conf",
+		  "bind": "!config/adguardhome"
+		},
+		{
+		  "container": "/opt/adguardhome/work",
+		  "bind": "!data/adguardhome"
+		}
+      ],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "!PUID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "!PGID"
+        }
+      ]
     }
   ]
