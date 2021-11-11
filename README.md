@@ -74,6 +74,7 @@ All templates are already configured to bind mount to various places on your dri
 - Emby
 - EmbyStat
 - FileBrowser
+- Flame
 - FreshRSS
 - Gazee
 - GOPHISH
@@ -82,6 +83,7 @@ All templates are already configured to bind mount to various places on your dri
 - Guacamole
 - Headphones
 - Heimdall
+- Home Assistant
 - Homer
 - HTPC Manager
 - Huginn
