@@ -4373,5 +4373,41 @@
           "label": "TZ"
         }
       ]
+    },
+	{
+      "type": 1,
+      "title": "Linkding",
+      "name": "linkding",
+      "description": "linkding is a simple bookmark service that you can host yourself. It's designed be to be minimal, fast and easy to set up using Docker.",
+      "logo": "https://raw.githubusercontent.com/Hakker/selfhosted_templates/master/Images/linkding.png",
+      "image": "sissbruecker/linkding:latest",
+      "categories": [
+        "Bookmark"
+      ],
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        {
+          "WebUI": "9090:9090/tcp"
+        }
+      ],
+      "volumes": [
+		{
+		  "container": "/etc/linkding/data",
+		  "bind": "!data/linkding"
+		}
+      ],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "!PUID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "!PGID"
+        }
+      ]
     }
   ]
