@@ -4299,6 +4299,78 @@
           "default": "!PGID"
         }
       ]
+    },
+	{
+      "type": 1,
+      "title": "Flame",
+      "name": "flame",
+      "description": "Flame is self-hosted startpage for your server.",
+      "logo": "https://raw.githubusercontent.com/Hakker/selfhosted_templates/master/Images/flame.png",
+      "image": "pawelmalak/flame:latest",
+      "categories": [
+        "Dashboard"
+      ],
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        {
+          "WebUI": "5005:5005/tcp"
+        }
+      ],
+      "volumes": [
+		{
+		  "container": "/app/data",
+		  "bind": "!data/flame"
+		}
+      ],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "!PUID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "!PGID"
+        }
+      ]
+    },
+	{
+      "type": 1,
+      "title": "Home Assistant",
+      "name": "home-assistant",
+      "description": "Open source home automation that puts local control and privacy first.",
+      "logo": "https://raw.githubusercontent.com/Hakker/selfhosted_templates/master/Images/home-assistant.png",
+      "image": "ghcr.io/home-assistant/home-assistant:stable",
+      "categories": [
+        "Home Automation"
+      ],
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "network_mode": "host"
+      "volumes": [
+		{
+		  "container": "/app/data",
+		  "bind": "!data/flame"
+		}
+      ],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "!PUID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "!PGID"
+        },
+        {
+          "name": "Timezone",
+          "default": "",
+          "label": "TZ"
+        }
+      ]
     }
   ]
-  
