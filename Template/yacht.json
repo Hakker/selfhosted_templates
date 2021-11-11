@@ -4474,7 +4474,7 @@
 		  "DNS over QUIC": "853:853/udp",
 		  "DNS over QUIC": "8853:8853/udp",
 		  "DNSCrypt TCP": "5443:5443/tcp",
-		  "DNSCrypt UDP": "5443:5443/udp",
+		  "DNSCrypt UDP": "5443:5443/udp"
         }
       ],
       "volumes": [
