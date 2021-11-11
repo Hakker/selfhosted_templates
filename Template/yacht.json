@@ -4349,10 +4349,11 @@
       "platform": "linux",
       "restart_policy": "unless-stopped",
       "network_mode": "host",
+      "ports": [],
       "volumes": [
 		{
-		  "container": "/app/data",
-		  "bind": "!data/flame"
+		  "container": "/config",
+		  "bind": "!config/home-assistant"
 		}
       ],
       "env": [
