@@ -118,6 +118,7 @@ All templates are already configured to bind mount to various places on your dri
 - OpenVPN Access Server
 - Organizr v2
 - OScam
+- Overseerr
 - Papermerge
 - PhotoShow
 - Pi-Hole
@@ -132,6 +133,7 @@ All templates are already configured to bind mount to various places on your dri
 - Quassel IRC
 - Radarr
 - Reactive-Resume
+- Requestrr
 - Resilio Sync
 - ruTorrent
 - SABnzbd

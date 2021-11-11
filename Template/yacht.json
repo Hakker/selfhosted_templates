@@ -4499,5 +4499,77 @@
           "default": "!PGID"
         }
       ]
+    },
+	{
+      "type": 1,
+      "title": "Overseerr",
+      "name": "overseerr",
+      "description": "Overseerr is a free and open source software application for managing requests for your media library. It integrates with your existing services, such as Sonarr, Radarr, and Plex!",
+      "logo": "https://raw.githubusercontent.com/Hakker/selfhosted_templates/master/Images/overseerr.png",
+      "image": "sctx/overseerr:latest",
+      "categories": [
+        "other"
+      ],
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        {
+          "WebUI": "5055:5055/tcp"
+        }
+      ],
+      "volumes": [
+		{
+		  "container": "/app/config",
+		  "bind": "!config/overseerr"
+		}
+      ],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "!PUID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "!PGID"
+        }
+      ]
+    },
+	{
+      "type": 1,
+      "title": "Requestrr",
+      "name": "requestrr",
+      "description": "Requestrr is a chatbot used to simplify using services like Sonarr/Radarr/Overseerr/Ombi via the use of chat!",
+      "logo": "https://raw.githubusercontent.com/Hakker/selfhosted_templates/master/Images/requestrr.png",
+      "image": "darkalfx/requestrr:latest",
+      "categories": [
+        "other"
+      ],
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        {
+          "WebUI": "4545:4545/tcp"
+        }
+      ],
+      "volumes": [
+		{
+		  "container": "/root/config",
+		  "bind": "!config/requestrr"
+		}
+      ],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "!PUID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "!PGID"
+        }
+      ]
     }
   ]
