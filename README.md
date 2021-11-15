@@ -64,6 +64,7 @@ All templates are already configured to bind mount to various places on your dri
 - COPS
 - CouchPotato
 - Daapd
+- Damselfly
 - DashMachine
 - Dashy
 - Davos
@@ -102,6 +103,7 @@ All templates are already configured to bind mount to various places on your dri
 - MariaDB
 - McMyAdmin 2
 - Medusa
+- Metube
 - MineOS
 - Minetest
 - Minisatip

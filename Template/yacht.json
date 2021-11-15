@@ -4586,7 +4586,7 @@
       "type": 1,
       "title": "Prowlarr",
       "name": "prowlarr",
-      "description": "RProwlarr is an indexer manager/proxy built on the popular arr .net/reactjs base stack to integrate with your various PVR apps.",
+      "description": "Prowlarr is an indexer manager/proxy built on the popular arr .net/reactjs base stack to integrate with your various PVR apps.",
       "logo": "https://raw.githubusercontent.com/Hakker/selfhosted_templates/master/Images/prowlarr.png",
       "image": "ghcr.io/linuxserver/prowlarr:develop",
       "categories": [
@@ -4620,6 +4620,86 @@
           "name": "Timezone",
           "default": "Europe/amsterdam",
           "label": "TZ"
+        }
+      ]
+    },
+	{
+      "type": 1,
+      "title": "Damselfly",
+      "name": "damselfly",
+      "description": "Damselfly is a server-based Digital Photograph Management system. Damselfly is designed to manage a large, folder-based collection of photographs, with a particular focus on fast search and keyword-tagging workflow.",
+      "logo": "https://raw.githubusercontent.com/Hakker/selfhosted_templates/master/Images/damselfly.png",
+      "image": "webreaper/damselfly:latest",
+      "categories": [
+        "Photo Management"
+      ],
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        {
+          "WebUI": "6363:6363/tcp"
+        }
+      ],
+      "volumes": [
+		{
+		  "container": "/config",
+		  "bind": "!config/damselfly"
+		},
+		{
+		  "container": "/thumbs",
+		  "bind": "!data/damselfly/thumbs"
+		},
+		{
+		  "container": "/photo",
+		  "bind": "!data/damselfly/photo"
+		}
+      ],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "!PUID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "!PGID"
+        }
+      ]
+    },
+	{
+      "type": 1,
+      "title": "Metube",
+      "name": "metube",
+      "description": "Web GUI for youtube-dl (using the yt-dlp fork) with playlist support. Allows you to download videos from YouTube and dozens of other sites.",
+      "logo": "https://raw.githubusercontent.com/Hakker/selfhosted_templates/master/Images/metube.png",
+      "image": "alexta69/metube:latest",
+      "categories": [
+        "other"
+      ],
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        {
+          "WebUI": "8081:8081/tcp"
+        }
+      ],
+      "volumes": [
+		{
+		  "container": "/downloads",
+		  "bind": "!data/metube"
+		}
+      ],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "!PUID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "!PGID"
         }
       ]
     }
