@@ -4333,6 +4333,11 @@
           "name": "PGID",
           "label": "PGID",
           "default": "!PGID"
+        },
+        {
+          "name": "PASSWORD",
+          "label": "PASSWORD",
+          "default": "flame_password"
         }
       ]
     },
