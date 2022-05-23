@@ -4674,6 +4674,51 @@
     },
 	{
       "type": 1,
+      "title": "Shlink",
+      "name": "shlink",
+      "description": "URL shortener",
+      "logo": "https://raw.githubusercontent.com/Hakker/selfhosted_templates/master/Images/shlink.svg",
+      "image": "shlinkio/shlink:stable",
+      "categories": [
+        "url shortener"
+      ],
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        {
+          "WebUI": "8080:8080/tcp"
+        }
+      ],
+      "env": [
+		{
+          "name": "DEFAULT_DOMAIN",
+          "label": "DEFAULT_DOMAIN",
+          "default": "doma.in"
+        },
+		{
+          "name": "IS_HTTPS_ENABLED",
+          "label": "IS_HTTPS_ENABLED",
+          "default": "true"
+        },
+		{
+          "name": "GEOLITE_LICENSE_KEY",
+          "label": "GEOLITE_LICENSE_KEY",
+          "default": "kjh23ljkbndskj345"
+        },
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "!PUID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "!PGID"
+        }
+      ]
+    },
+	{
+      "type": 1,
       "title": "Metube",
       "name": "metube",
       "description": "Web GUI for youtube-dl (using the yt-dlp fork) with playlist support. Allows you to download videos from YouTube and dozens of other sites.",
