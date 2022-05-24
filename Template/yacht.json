@@ -4239,7 +4239,7 @@
       ],
       "volumes": [
         {
-          "container": "/app/public",
+          "container": "/app/public/conf.yml",
           "bind": "!config/dashy"
         },
 		{
