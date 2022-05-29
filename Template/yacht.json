@@ -4746,15 +4746,15 @@
 		{
 		  "container": "/data",
 		  "bind": "!data/stash/data"
-		}
+		},
 		{
 		  "container": "/metadata",
 		  "bind": "!data/stash/metadata"
-		}
+		},
 		{
 		  "container": "/cache",
 		  "bind": "!data/stash/cache"
-		}
+		},
 		{
 		  "container": "/generated",
 		  "bind": "!data/stash/generated"
