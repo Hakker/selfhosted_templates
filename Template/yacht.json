@@ -4719,6 +4719,87 @@
     },
 	{
       "type": 1,
+      "title": "Stash",
+      "name": "stash",
+      "description": "Stash allows you to organize and view your own collection of adult video and image files. Think of it like a private PornHub site for your personal porn collection. ",
+      "logo": "https://raw.githubusercontent.com/Hakker/selfhosted_templates/master/Images/stash.svg",
+      "image": "stashapp/stash:latest",
+      "categories": [
+        "porn organizer"
+      ],
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        {
+          "WebUI": "9999:9999/tcp"
+        }
+      ],
+	  "volumes": [
+		{
+		  "container": "/etc/localtime:ro",
+		  "bind": "/etc/localtime"
+		},
+		{
+		  "container": "/root/.stash",
+		  "bind": "!config/stash/config"
+		},
+		{
+		  "container": "/data",
+		  "bind": "!data/stash/data"
+		}
+		{
+		  "container": "/metadata",
+		  "bind": "!data/stash/metadata"
+		}
+		{
+		  "container": "/cache",
+		  "bind": "!data/stash/cache"
+		}
+		{
+		  "container": "/generated",
+		  "bind": "!data/stash/generated"
+		}
+      ],
+      "env": [
+		{
+          "name": "STASH_STASH",
+          "label": "STASH_STASH",
+          "default": "/data/"
+        },
+		{
+          "name": "STASH_GENERATED",
+          "label": "STASH_GENERATED",
+          "default": "/generated/"
+        },
+		{
+          "name": "STASH_METADATA",
+          "label": "STASH_METADATA",
+          "default": "/metadata/"
+        },
+		{
+          "name": "STASH_CACHE",
+          "label": "STASH_CACHE",
+          "default": "/cache/"
+        },
+		{
+          "name": "STASH_PORT",
+          "label": "STASH_PORT",
+          "default": "9999"
+        },
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "!PUID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "!PGID"
+        }
+      ]
+    },
+	{
+      "type": 1,
       "title": "Metube",
       "name": "metube",
       "description": "Web GUI for youtube-dl (using the yt-dlp fork) with playlist support. Allows you to download videos from YouTube and dozens of other sites.",
