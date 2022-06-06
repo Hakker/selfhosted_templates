@@ -3779,7 +3779,14 @@
           "container": "/var/run/docker.sock",
           "bind": "/var/run/docker.sock"
         }
-      ]
+	  ],
+	  "env": [
+        {
+          "name": "WATCHTOWER_CLEANUP",
+          "label": "WATCHTOWER_CLEANUP",
+          "default": "false"
+        }
+		]
     },
     {
       "type": 1,
@@ -4721,7 +4728,7 @@
       "type": 1,
       "title": "Stash",
       "name": "stash",
-      "description": "Stash allows you to organize and view your own collection of adult video and image files. Think of it like a private PornHub site for your personal porn collection. ",
+      "description": "Stash allows you to organize and view your own collection of adult video and image files. Think of it like a private PornHub site for your personal porn collection.",
       "logo": "https://raw.githubusercontent.com/Hakker/selfhosted_templates/master/Images/stash.svg",
       "image": "stashapp/stash:latest",
       "categories": [
