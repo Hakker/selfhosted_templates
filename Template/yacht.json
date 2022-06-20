@@ -4805,6 +4805,51 @@
         }
       ]
     },
+		{
+      "type": 1,
+      "title": "Nextcloud",
+      "name": "nextcloud",
+      "description": "Nextcloud gives you access to all your files wherever you are.",
+      "logo": "https://raw.githubusercontent.com/Hakker/selfhosted_templates/master/Images/nextcloud.png",
+      "image": "lscr.io/linuxserver/nextcloud:latest",
+      "categories": [
+        "File storage"
+      ],
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        {
+          "WebUI": "443:443/tcp"
+        }
+      ],
+	  "volumes": [
+		{
+		  "container": "/config",
+		  "bind": "!config/nextcloud/config"
+		},
+		{
+		  "container": "/data",
+		  "bind": "!data/nextcloud/data"
+		}
+      ],
+      "env": [
+	   {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "Europe/Amsterdam"
+        },
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "!PUID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "!PGID"
+        }
+      ]
+    },
 	{
       "type": 1,
       "title": "Metube",
