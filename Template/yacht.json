@@ -4864,7 +4864,7 @@
       "restart_policy": "unless-stopped",
       "ports": [
         {
-          "Relay": "9000:9000/tcp"
+          "Relay": "9000:9000/tcp",
 		  "Relay SSL": "9001:9001/tcp"
         }
       ],
