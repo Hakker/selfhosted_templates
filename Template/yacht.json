@@ -4852,6 +4852,48 @@
     },
 	{
       "type": 1,
+      "title": "Weechat",
+      "name": "weechat",
+      "description": "Fast text irc client",
+      "logo": "https://raw.githubusercontent.com/Hakker/selfhosted_templates/master/Images/weechat.png",
+      "image": "jkaberg/weechat:latest",
+      "categories": [
+        "irc client"
+      ],
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        {
+          "Relay": "9000:9000/tcp"
+		  "Relay SSL": "9001:9001/tcp"
+        }
+      ],
+	  "volumes": [
+		{
+		  "container": "/weechat",
+		  "bind": "!config/weechat/config"
+		}
+      ],
+      "env": [
+	   {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "Europe/Amsterdam"
+        },
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "!PUID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "!PGID"
+        }
+      ]
+    },
+	{
+      "type": 1,
       "title": "Metube",
       "name": "metube",
       "description": "Web GUI for youtube-dl (using the yt-dlp fork) with playlist support. Allows you to download videos from YouTube and dozens of other sites.",
