@@ -4894,6 +4894,142 @@
     },
 	{
       "type": 1,
+      "title": "Wizarr",
+      "name": "wizarr",
+      "description": "Wizarr is an automatic user invitation system for Plex.",
+      "logo": "https://raw.githubusercontent.com/Hakker/selfhosted_templates/master/Images/wizarr.png",
+      "image": "ghcr.io/wizarrrr/wizarr",
+      "categories": [
+        "Plex"
+      ],
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        {
+		  "Webui": "5690:5690/tcp"
+        }
+      ],
+	  "volumes": [
+		{
+		  "container": "/data/database",
+		  "bind": "!data/wizarr/data"
+		}
+      ],
+      "env": [
+	   {
+          "name": "APP_URL",
+          "label": "APP_URL",
+          "default": "https://join.domain.com"
+        },
+        {
+          "name": "DISABLE_BUILTIN_AUTH",
+          "label": "DISABLE_BUILTIN_AUTH",
+          "default": "false"
+        },
+        {
+          "name": "ALLOW_BUG_REPORTING",
+          "label": "ALLOW_BUG_REPORTING",
+          "default": "true"
+        }
+      ]
+    },
+	{
+      "type": 1,
+      "title": "Readarr",
+      "name": "readzarr",
+      "description": "Readarr is an ebook and audiobook collection manager for Usenet and BitTorrent users.",
+      "logo": "https://raw.githubusercontent.com/Hakker/selfhosted_templates/master/Images/readarr.svg",
+      "image": "hotio/readarr",
+      "categories": [
+        "Books"
+      ],
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        {
+          "WebUI": "8787:8787/tcp"
+        }
+      ],
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "!config/readarr"
+        },
+        {
+          "container": "/books",
+          "bind": "!books"
+        }
+      ],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "!PUID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "!PGID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "Europe/Amsterdam"
+        },
+		{
+		  "name": "UMASK",
+		  "label": "UMASK",
+		  "defailt": "002"
+		}
+      ]
+    },
+	{
+      "type": 1,
+	  "title": "Dokuwiki",
+      "name": "dokuwiki",
+      "description": "Simple but expandable wiki.",
+      "logo": "https://raw.githubusercontent.com/Hakker/selfhosted_templates/master/Images/dokuwiki.png",
+      "image": "lscr.io/linuxserver/dokuwiki:latest",
+      "categories": [
+        "Wiki"
+      ],
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        {
+          "WebUI": "80:80/tcp"
+        }
+      ],
+      "volumes": [
+        {
+          "container": "/conf",
+          "bind": "!config/dokuwiki"
+        },
+        {
+          "container": "/data",
+          "bind": "!data/dokuwiki"
+        }
+      ],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "!PUID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "!PGID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "Europe/Amsterdam"
+        }
+      ]
+    },
+	{
+      "type": 1,
       "title": "Metube",
       "name": "metube",
       "description": "Web GUI for youtube-dl (using the yt-dlp fork) with playlist support. Allows you to download videos from YouTube and dozens of other sites.",
