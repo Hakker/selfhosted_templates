@@ -5030,6 +5030,51 @@
     },
 	{
       "type": 1,
+	  "title": "Homepage",
+      "name": "homepage",
+      "description": "homelab dashboard/landing page",
+      "logo": "https://raw.githubusercontent.com/Hakker/selfhosted_templates/master/Images/homepage.png",
+      "image": "ghcr.io/benphelps/homepage:latest",
+      "categories": [
+        "Dashboard"
+      ],
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        {
+          "WebUI": "3000:3000/tcp"
+        }
+      ],
+      "volumes": [
+        {
+          "container": "/app/config",
+          "bind": "!config/homepage"
+        },
+        {
+          "container": "/var/run/docker.sock",
+          "bind": "/var/run/docker.sock"
+        }
+      ],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "!PUID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "!PGID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "Europe/Amsterdam"
+        }
+      ]
+    },
+	{
+      "type": 1,
       "title": "Metube",
       "name": "metube",
       "description": "Web GUI for youtube-dl (using the yt-dlp fork) with playlist support. Allows you to download videos from YouTube and dozens of other sites.",
